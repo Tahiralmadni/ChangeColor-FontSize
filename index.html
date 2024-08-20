@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #Contanier{
+display: flex;
+gap: 20px;
+width: 1200px;
+margin: auto;
+    }
+    .main{
+width: 300px;
+height: 200px;
+border: 2px solid red;
+text-align: center;
+margin-top: 10px;
+padding: 20px;
+    }
+    #btn{
+        margin: auto;
+        display: block;
+    }
+    #btn1{
+        margin: auto;
+        display: block;
+    }
+   </style>
+<body>
+    <div id="Contanier">
+<div class = "main">1</div>
+<div class = "main">2</div>
+<div class = "main">3</div>
+<div class = "main">4</div>
+    </div><br><br>
+    <button id="btn">Change Color & Font Size</button><br>
+
+    <button id="btn1">Normal</button>
+
+    <script>
+        let btn=document.getElementById('btn')
+        let box=document.getElementsByClassName('main')
+        let btn1=document.getElementById('btn1')
+
+        btn.addEventListener('click',()=>{
+            box[0].style.backgroundColor="yellow"
+            box[1].style.backgroundColor="red"
+            box[2].style.backgroundColor="blue"
+            box[3].style.backgroundColor="green"
+        })
+        btn.addEventListener('click',()=>{
+            for(let font of box){
+                font.style.fontSize ="50px"
+        }
+        })
+        btn1.addEventListener('click',()=>{
+            box[0].style.backgroundColor=""
+            box[1].style.backgroundColor=""
+            box[2].style.backgroundColor=""
+            box[3].style.backgroundColor=""
+            for(let font of box){
+                font.style.fontSize =""
+            }
+        })
+    </script>
+</body>
+</html>
